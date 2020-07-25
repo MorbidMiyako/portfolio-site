@@ -5,3 +5,41 @@ test for design on site
 site will be spa
 
 create function to make "stars" appear on background
+
+
+one test for App, since its a single page
+divide tests up into:
+    jest functions:
+        simple 1+1 tests
+
+    general elements:
+        background
+        function that creates "stars"
+        function that checks scroll position and changes if needed
+
+    front of the page:
+        three text divs
+            contains the correct text
+
+        linkedin logo & button
+            has link attached
+            is clickable
+
+        github logo & button
+            has link attached
+            is clickable
+            
+        go down button
+            is clickable
+            has change viewport 
+    
+    about part:
+        two text divs
+            cointains correct text
+
+    projects page:
+        at least 5 text divs
+        fits 2n + 1 text divs, n being amount of projects
+        has at least 2 project links
+        has n project links
+
