@@ -4,4 +4,6 @@ started by creating a figma design
 
 created react app
 
+cleaned up react app
+
 added notes and blog files to help document process
