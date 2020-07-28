@@ -43,3 +43,45 @@ divide tests up into:
         has at least 2 project links
         has n project links
 
+
+there are two divs containing social buttons -> need to create tests for both
+
+need to add general tests to check if front page, about etc are inside the
+mainDiv to ensure the correct structure
+
+updated about part:
+    two text divs
+        contains correct text
+    social buttons div
+        contains same as frontSocialButtons
+
+chose to go for falsy when checking amount of divs to slim chance of false
+positive
+
+decided to go for a structure such as:
+<projectsdiv>
+    <h2>projects</h2>
+    <projectdiv>
+        <h3>projectname</h3>
+        <p>description<a>link</a>continue description </p>
+    </projectsdiv>
+    <projectdiv>
+        <h3>projectname</h3>
+        <p>description<a>link</a>continue description </p>
+    </projectsdiv>
+    <projectdiv>
+        <h3>projectname</h3>
+        <p>description<a>link</a>continue description </p>
+    </projectsdiv>
+</projectsdiv>
+
+this means the new test setup will be:
+    projects page:
+        at least 3 divs
+    first div:
+        has a h2 tag with projects
+    eacht subsequent div
+        has at least a p tag
+            have at least an a tag with an href
+        has at least a h3 tag
+
