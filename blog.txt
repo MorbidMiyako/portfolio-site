@@ -13,3 +13,67 @@ set up jest
 set up general test for jest
 
 wrote out general setup for tests
+
+implemented general setup for tests in app.test.js
+
+build out general page tests
+1) background checks if styling is present, might have to be edited to allow
+for styling updates
+2) stars function will render a random array of "stars" by unmounting and this
+should prove to be a different array
+3) the viewport scrollheight will be tested on the button, making the test
+redundant
+
+build front page tests
+n) used childNodes on the div containing the frontpage text to reduce the
+amount of testid's and focus on the structure at the same time
+
+whilst working on the tests for the social div i noticed a few things from the
+figma document i forgot to implement, and made some edits to the notes.txt
+
+wrote comments depicting where changes would have to be made, referring to the
+notes.txt
+
+wrote the test checking the social buttons, focused on checking the same
+source and if the correct link was attached, along with if the new page was
+openened in a new tab automatically.
+
+when writing the test to check if the correct function was attached to the
+down button I ran into quite a struggle. First I looked around for a while
+looking to find a function that would help me, since toHaveAttribute was
+insufficient. 
+This, however, was fruitless since the function called was anonymous and didnt
+even show up on the HTML. 
+This meant I had to find a different way, I decided to console.log the
+element, to see what information was on the object.
+The object did have the function on it, but the key to access it was randomly
+generated.
+This mean I had to request the array of keys on the object, and select the 2nd
+key (which housed the value containing the function)
+From here I navigated further into the object until I managed to pull out the
+function. However I wanted to make sure it had the correct function attached
+to it, and by turning the object into a string it gave the whole function in
+string format, allowing toStrictEqual the function with the function imported
+into the testfile.
+
+quick comment regarding the createStarsFunction, this function is never loaded
+into the DOM, but runs in the background, this means only its effects can be
+measured, not the presence of the function itself.
+
+writing the tests for the projects section made me realise i was unsure about
+the setup of the whole div. were the projects with their link going to be
+children of a div containing them, or were they going to be sibblings of other
+projects and their links? 
+in the notes.txt i wrote down the new structure, and wrote out a new test
+setup
+
+while writing the test following the test setup, decided to test if logo's
+were properly wrapped in a tags too.
+
+finished writing the lasts test, in order to test each projectDiv i decided to
+use a for loop, starting at the second div (due to the first div being the
+title)
+
+in order to test if the child of the p tag was an a tag i had to add a new
+testId since chaining too many child nodes caused the elemnt to register as
+null.
