@@ -2,11 +2,11 @@ import React from "react"
 import { screen, render } from "@testing-library/react"
 import App from "./App"
 import '@testing-library/jest-dom'
-// import StarsFunction from "./helpers/createStars" this function wont be directly checked and thus doesnt require an import atm.
-// import scrollDownFunction from "./helpers/ScrollDown.js"
-// import linkedinLogoImg from "./linkedinLogoImg.svg"
-// import githubLogoImg from "./githubLogoImg.svg"
-// import scrollDownButtonImg from "./scrollDownButtonImg.svg"
+import StarsFunction from "./helpers/CreateStars.js" //this function wont be directly checked and thus doesnt require an import atm.
+import ScrollDownFunction from "./helpers/ScrollDown.js"
+import linkedinLogoImg from "./linkedinLogoImg.png"
+import githubLogoImg from "./githubLogoImg.png"
+import scrollDownButtonImg from "./scrollDownButtonImg.png"
 
 
 
@@ -21,16 +21,16 @@ describe("checking if jest works", () => {
 describe('checking if general page elements are present', () => {
   test("background present", () => {
     render(<App />)
-    const mainDiv = screen.getByTestId(/mainDiv/i)
+    const mainDiv = screen.getByTestId("mainDiv")
     expect(mainDiv).toHaveStyle(' background-color: black')
   })
 
   test("stars function runs", () => {
     const { unmount, getAllByTestId } = render(<App />)
-    const firstLoad = getAllByTestId(/star/i)
+    const firstLoad = getAllByTestId("star")
     unmount()
     render(<App />)
-    const secondLoad = screen.getAllByTestId(/star/i)
+    const secondLoad = screen.getAllByTestId("star")
     expect(firstLoad).not.toStrictEqual(secondLoad)
   })
 
@@ -46,6 +46,30 @@ describe('checking if general page elements are present', () => {
 
   // as mentioned in notes, add test for frontpage, about section etc being child divs
   // use toContainElement
+  test("frontpage div inside mainpage", () => {
+    render(<App />)
+    const mainDiv = screen.getByTestId("mainDiv")
+    const frontPageDiv = screen.getByTestId("frontPage")
+    expect(mainDiv).toContainElement(frontPageDiv)
+
+  })
+
+  test("aboutpage div inside mainpage", () => {
+    render(<App />)
+    const mainDiv = screen.getByTestId("mainDiv")
+    const aboutPageDiv = screen.getByTestId("aboutPage")
+    expect(mainDiv).toContainElement(aboutPageDiv)
+
+  })
+
+  test("projectsection inside mainpage", () => {
+    render(<App />)
+    const mainDiv = screen.getByTestId("mainDiv")
+    const projectsDiv = screen.getByTestId("projectsDiv")
+    expect(mainDiv).toContainElement(projectsDiv)
+
+  })
+
 })
 
 describe('checking front page', () => {
@@ -156,7 +180,7 @@ describe('checking front page', () => {
       render(<App />)
       const scrollDownButton = screen.getByTestId("scrollDownButton")
       const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
-      expect(secondKeyScrollDownButton.toString()).toStrictEqual(scrollDownFunction.toString())
+      expect(secondKeyScrollDownButton.toString()).toStrictEqual(ScrollDownFunction.toString())
     })
 
     /*

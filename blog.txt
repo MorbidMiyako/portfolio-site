@@ -77,3 +77,22 @@ title)
 in order to test if the child of the p tag was an a tag i had to add a new
 testId since chaining too many child nodes caused the elemnt to register as
 null.
+
+commited the tests to the tests branch and merged the branch into master
+before cleaning up the branch
+
+set up branch webdev to start creating the website itself, after making all
+the tests past i will develop the functions used. next i will finish by
+creating the aditional styling.
+
+made quick change to general test, changed regex into string
+
+set up general structure, added logo files and dummy functions at the right
+location to ensure the test suite would run
+
+while going trough the tests I noticed i didnt implement the tests for
+presence of the divs inside the main div
+
+quickly added the tests, and commited the structure and updated tests
+
+

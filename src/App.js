@@ -3,7 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div >
+    <div data-testid="mainDiv" style={{ backgroundColor: "black" }}>
+
     </div>
   );
 }
