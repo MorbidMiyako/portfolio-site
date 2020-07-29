@@ -2,11 +2,11 @@ import React from "react"
 import { screen, render } from "@testing-library/react"
 import App from "./App"
 import '@testing-library/jest-dom'
-// import StarsFunction from "./helpers/createStars" this function wont be directly checked and thus doesnt require an import atm.
-// import scrollDownFunction from "./helpers/ScrollDown.js"
-// import linkedinLogoImg from "./linkedinLogoImg.svg"
-// import githubLogoImg from "./githubLogoImg.svg"
-// import scrollDownButtonImg from "./scrollDownButtonImg.svg"
+import StarsFunction from "./helpers/CreateStars.js" //this function wont be directly checked and thus doesnt require an import atm.
+import ScrollDownFunction from "./helpers/ScrollDown.js"
+import linkedinLogoImg from "./linkedinLogoImg.png"
+import githubLogoImg from "./githubLogoImg.png"
+import scrollDownButtonImg from "./scrollDownButtonImg.png"
 
 
 
@@ -21,16 +21,16 @@ describe("checking if jest works", () => {
 describe('checking if general page elements are present', () => {
   test("background present", () => {
     render(<App />)
-    const mainDiv = screen.getByTestId(/mainDiv/i)
+    const mainDiv = screen.getByTestId("mainDiv")
     expect(mainDiv).toHaveStyle(' background-color: black')
   })
 
   test("stars function runs", () => {
     const { unmount, getAllByTestId } = render(<App />)
-    const firstLoad = getAllByTestId(/star/i)
+    const firstLoad = getAllByTestId("star")
     unmount()
     render(<App />)
-    const secondLoad = screen.getAllByTestId(/star/i)
+    const secondLoad = screen.getAllByTestId("star")
     expect(firstLoad).not.toStrictEqual(secondLoad)
   })
 
@@ -46,6 +46,30 @@ describe('checking if general page elements are present', () => {
 
   // as mentioned in notes, add test for frontpage, about section etc being child divs
   // use toContainElement
+  test("frontpage div inside mainpage", () => {
+    render(<App />)
+    const mainDiv = screen.getByTestId("mainDiv")
+    const frontPageDiv = screen.getByTestId("frontPage")
+    expect(mainDiv).toContainElement(frontPageDiv)
+
+  })
+
+  test("aboutpage div inside mainpage", () => {
+    render(<App />)
+    const mainDiv = screen.getByTestId("mainDiv")
+    const aboutPageDiv = screen.getByTestId("aboutPage")
+    expect(mainDiv).toContainElement(aboutPageDiv)
+
+  })
+
+  test("projectsection inside mainpage", () => {
+    render(<App />)
+    const mainDiv = screen.getByTestId("mainDiv")
+    const projectsDiv = screen.getByTestId("projectsDiv")
+    expect(mainDiv).toContainElement(projectsDiv)
+
+  })
+
 })
 
 describe('checking front page', () => {
@@ -107,63 +131,64 @@ describe('checking front page', () => {
     test("logo clickable", () => {
       render(<App />)
       const frontSocialDiv = screen.getByTestId("frontSocial")
-
-    })
     */
 
   })
 
-  describe("checking github logo", () => {
-    test("logo present", () => {
-      render(<App />)
-      const githubLogo = screen.getByTestId("frontSocial").childNodes[1].firstChild
-      expect(githubLogo).toHaveAttribute("src", githubLogoImg)
-    })
+})
 
-    test("link wrapped around logo", () => {
-      render(<App />)
-      const githubLogoATag = screen.getByTestId("frontSocial").childNodes[1]
-      expect(githubLogoATag).toHaveAttribute("href", "https://github.com/MorbidMiyako")
-      expect(githubLogoATag).toHaveAttribute("target", "_blank")
-      expect(githubLogoATag).toHaveAttribute("rel", "noopener noreferrer")
-      // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
-      const githubLogoWrappingElement = githubLogoATag[Object.keys(githubLogoATag)[0]].type
-      expect(githubLogoWrappingElement).toStrictEqual("a")
-    })
-
-    /*
-    ============================
-    due to the plan of wrapping img in an a tag with href, this means clickable by definition
-    ============================
-
-    test("logo clickable", () => {
-      render(<App />)
-      const frontSocialDiv = screen.getByTestId("frontSocial")
-
-    })
-    */
-
+describe("checking github logo", () => {
+  test("logo present", () => {
+    render(<App />)
+    const githubLogo = screen.getByTestId("frontSocial").childNodes[1].firstChild
+    expect(githubLogo).toHaveAttribute("src", githubLogoImg)
   })
 
-  describe("checking down button present", () => {
-    test("button present", () => {
-      render(<App />)
-      const scrollDownButton = screen.getByTestId("scrollDownButton")
-      expect(scrollDownButton).toHaveAttribute("src", scrollDownButtonImg)
-    })
+  test("link wrapped around logo", () => {
+    render(<App />)
+    const githubLogoATag = screen.getByTestId("frontSocial").childNodes[1]
+    expect(githubLogoATag).toHaveAttribute("href", "https://github.com/MorbidMiyako")
+    expect(githubLogoATag).toHaveAttribute("target", "_blank")
+    expect(githubLogoATag).toHaveAttribute("rel", "noopener noreferrer")
+    // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
+    const githubLogoWrappingElement = githubLogoATag[Object.keys(githubLogoATag)[0]].type
+    expect(githubLogoWrappingElement).toStrictEqual("a")
+  })
 
-    test("function attached to button", () => {
-      render(<App />)
-      const scrollDownButton = screen.getByTestId("scrollDownButton")
-      const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
-      expect(secondKeyScrollDownButton.toString()).toStrictEqual(scrollDownFunction.toString())
-    })
+  /*
+  ============================
+  due to the plan of wrapping img in an a tag with href, this means clickable by definition
+  ============================
+
+  test("logo clickable", () => {
+    render(<App />)
+    const frontSocialDiv = screen.getByTestId("frontSocial")
+
+  })
+  
+  */
+
+})
+
+describe("checking down button present", () => {
+  test("button present", () => {
+    render(<App />)
+    const scrollDownButton = screen.getByTestId("scrollDownButton")
+    expect(scrollDownButton).toHaveAttribute("src", scrollDownButtonImg)
+  })
+
+  test("function attached to button", () => {
+    render(<App />)
+    const scrollDownButton = screen.getByTestId("scrollDownButton")
+    const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
+    expect(secondKeyScrollDownButton.toString()).toStrictEqual(ScrollDownFunction.toString())
+
+    // due to the way the rendering works, viewport cant be checked, thus there cant be checked if the site scrolled down or not
 
     /*
     ============================
     due to already checking for the onClick funtion, this means clickable by definition
     ============================
-
     test("button clickable", () => {
       expect(1 + 1).not.toBe(3)
     })
@@ -186,9 +211,7 @@ describe('checking about section', () => {
       render(<App />)
       const secondDiv = screen.getByTestId("aboutPage").childNodes[1]
       expect(secondDiv).toBeInTheDocument()
-      expect(secondDiv).toHaveTextContent(`Title: WOW A WHOLE PAGE ABOUT ME?!
-Bernd de Kruik is a 22 year old computer geek from Netherlands with a creative out of the box mindset! Bernd thrives at solving problems and puzzles with code, which makes him a full stack webdev that won’t give up until he has the solution for the task that is handled to him! 
-He loves to cook and has a soft spot for cats in his heart! People around him consider him a team player with great communication skills. He is very innovative, dedicated and hardworking. He also hates to talk about himself in the third person and he would really appreciate to not have to do it again.`)
+      expect(secondDiv).toHaveTextContent(`Title: WOW A WHOLE PAGE ABOUT ME?! Bernd de Kruik is a 22 year old computer geek from Netherlands with a creative out of the box mindset! Bernd thrives at solving problems and puzzles with code, which makes him a full stack webdev that won’t give up until he has the solution for the task that is handled to him! He loves to cook and has a soft spot for cats in his heart! People around him consider him a team player with great communication skills. He is very innovative, dedicated and hardworking. He also hates to talk about himself in the third person and he would really appreciate to not have to do it again.`)
     })
 
 
@@ -258,7 +281,7 @@ describe('checking projects section', () => {
   })
 
   describe('checking first div', () => {
-    test("h3 contains the correct text", () => {
+    test("h2 contains the correct text", () => {
       render(<App />)
       const projectTitle = screen.getByTestId("projectsDiv").childNodes[0].childNodes[0]
       expect(projectTitle).toHaveTextContent(/projects/i)
@@ -310,6 +333,8 @@ describe('checking projects section', () => {
 
           const projectDiv = screen.getByTestId("projectsDiv").childNodes[i].childNodes[1]
           expect(projectDiv).toContainElement(projectLink)
+          expect(projectLink).toHaveAttribute("target", "_blank")
+          expect(projectLink).toHaveAttribute("rel", "noopener noreferrer")
         })
 
       })

@@ -69,3 +69,56 @@ setup
 
 while writing the test following the test setup, decided to test if logo's
 were properly wrapped in a tags too.
+
+finished writing the lasts test, in order to test each projectDiv i decided to
+use a for loop, starting at the second div (due to the first div being the
+title)
+
+in order to test if the child of the p tag was an a tag i had to add a new
+testId since chaining too many child nodes caused the elemnt to register as
+null.
+
+commited the tests to the tests branch and merged the branch into master
+before cleaning up the branch
+
+set up branch webdev to start creating the website itself, after making all
+the tests past i will develop the functions used. next i will finish by
+creating the aditional styling.
+
+made quick change to general test, changed regex into string
+
+set up general structure, added logo files and dummy functions at the right
+location to ensure the test suite would run
+
+while going trough the tests I noticed i didnt implement the tests for
+presence of the divs inside the main div
+
+quickly added the tests, and commited the structure and updated tests
+
+the general tests all pass, Create stars got its general setup worked out in
+order to make it pass.
+the function will create an array with stars, each having random styling
+variables within a certain margin. these stylings will then be applied to the
+generated stars. 
+
+applied a very simple styling: text color white. simply to allow to see the
+text output haha, with the black background and all
+
+the front page tests all pass, if it wasnt for the test i would have forgotten
+the target and rel attributes to ensure a new tab would be opened
+
+added a small comment to the test file
+
+while getting the about page tests to pass, I noticed I left in some enters
+between the sections of the about text when copying in the text i wrote. Thus
+had to make a small adjustment to the test
+
+the about page tests all pass
+
+small typo in the test for the first div, h3 had to be h2 so fixed the typo
+
+noticed i didnt include a test for the project links to open in a new tab, so
+quickly included them.
+
+
+

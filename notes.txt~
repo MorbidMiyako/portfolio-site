@@ -83,5 +83,6 @@ this means the new test setup will be:
     eacht subsequent div
         has at least a p tag
             have at least an a tag with an href
-        has at least a h3 tage
+        has at least a h3 tag
+
 
