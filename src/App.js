@@ -69,7 +69,33 @@ function App() {
       </div>
 
       <div data-testid="projectsDiv">
+        <div>
+          <h2>
+            Projects
+          </h2>
+        </div>
 
+        <div>
+          <h3>
+            Portfolio site
+          </h3>
+
+          <p>
+            The amazing site ur currently looking at, it can be found <a data-testid="projectLink" href="site" target="_blank" rel="noopener noreferrer"> here</a>. And its hella amazing
+          </p>
+
+        </div>
+
+        <div>
+          <h3>
+            Game of Life
+          </h3>
+
+          <p>
+            The amazing site ur currently looking at, it can be found <a data-testid="projectLink" href="site" target="_blank" rel="noopener noreferrer"> here</a>. And its hella amazing
+          </p>
+
+        </div>
       </div>
     </div>
   );

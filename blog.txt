@@ -113,3 +113,14 @@ while getting the about page tests to pass, I noticed I left in some enters
 between the sections of the about text when copying in the text i wrote. Thus
 had to make a small adjustment to the test
 
+the about page tests all pass
+
+small typo in the test for the first div, h3 had to be h2 so fixed the typo
+
+noticed i didnt include a test for the project links to open in a new tab, so
+quickly included them.
+
+got all the tests to pass, moving on to writin the create stars function next
+
+
+

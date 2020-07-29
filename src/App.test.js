@@ -131,57 +131,57 @@ describe('checking front page', () => {
     test("logo clickable", () => {
       render(<App />)
       const frontSocialDiv = screen.getByTestId("frontSocial")
-
-    })
     */
 
   })
 
-  describe("checking github logo", () => {
-    test("logo present", () => {
-      render(<App />)
-      const githubLogo = screen.getByTestId("frontSocial").childNodes[1].firstChild
-      expect(githubLogo).toHaveAttribute("src", githubLogoImg)
-    })
+})
 
-    test("link wrapped around logo", () => {
-      render(<App />)
-      const githubLogoATag = screen.getByTestId("frontSocial").childNodes[1]
-      expect(githubLogoATag).toHaveAttribute("href", "https://github.com/MorbidMiyako")
-      expect(githubLogoATag).toHaveAttribute("target", "_blank")
-      expect(githubLogoATag).toHaveAttribute("rel", "noopener noreferrer")
-      // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
-      const githubLogoWrappingElement = githubLogoATag[Object.keys(githubLogoATag)[0]].type
-      expect(githubLogoWrappingElement).toStrictEqual("a")
-    })
-
-    /*
-    ============================
-    due to the plan of wrapping img in an a tag with href, this means clickable by definition
-    ============================
-
-    test("logo clickable", () => {
-      render(<App />)
-      const frontSocialDiv = screen.getByTestId("frontSocial")
-
-    })
-    */
-
+describe("checking github logo", () => {
+  test("logo present", () => {
+    render(<App />)
+    const githubLogo = screen.getByTestId("frontSocial").childNodes[1].firstChild
+    expect(githubLogo).toHaveAttribute("src", githubLogoImg)
   })
 
-  describe("checking down button present", () => {
-    test("button present", () => {
-      render(<App />)
-      const scrollDownButton = screen.getByTestId("scrollDownButton")
-      expect(scrollDownButton).toHaveAttribute("src", scrollDownButtonImg)
-    })
+  test("link wrapped around logo", () => {
+    render(<App />)
+    const githubLogoATag = screen.getByTestId("frontSocial").childNodes[1]
+    expect(githubLogoATag).toHaveAttribute("href", "https://github.com/MorbidMiyako")
+    expect(githubLogoATag).toHaveAttribute("target", "_blank")
+    expect(githubLogoATag).toHaveAttribute("rel", "noopener noreferrer")
+    // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
+    const githubLogoWrappingElement = githubLogoATag[Object.keys(githubLogoATag)[0]].type
+    expect(githubLogoWrappingElement).toStrictEqual("a")
+  })
 
-    test("function attached to button", () => {
-      render(<App />)
-      const scrollDownButton = screen.getByTestId("scrollDownButton")
-      const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
-      expect(secondKeyScrollDownButton.toString()).toStrictEqual(ScrollDownFunction.toString())
-    })
+  /*
+  ============================
+  due to the plan of wrapping img in an a tag with href, this means clickable by definition
+  ============================
+
+  test("logo clickable", () => {
+    render(<App />)
+    const frontSocialDiv = screen.getByTestId("frontSocial")
+
+  })
+  
+  */
+
+})
+
+describe("checking down button present", () => {
+  test("button present", () => {
+    render(<App />)
+    const scrollDownButton = screen.getByTestId("scrollDownButton")
+    expect(scrollDownButton).toHaveAttribute("src", scrollDownButtonImg)
+  })
+
+  test("function attached to button", () => {
+    render(<App />)
+    const scrollDownButton = screen.getByTestId("scrollDownButton")
+    const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
+    expect(secondKeyScrollDownButton.toString()).toStrictEqual(ScrollDownFunction.toString())
 
     // due to the way the rendering works, viewport cant be checked, thus there cant be checked if the site scrolled down or not
 
@@ -189,7 +189,6 @@ describe('checking front page', () => {
     ============================
     due to already checking for the onClick funtion, this means clickable by definition
     ============================
-
     test("button clickable", () => {
       expect(1 + 1).not.toBe(3)
     })
@@ -282,7 +281,7 @@ describe('checking projects section', () => {
   })
 
   describe('checking first div', () => {
-    test("h3 contains the correct text", () => {
+    test("h2 contains the correct text", () => {
       render(<App />)
       const projectTitle = screen.getByTestId("projectsDiv").childNodes[0].childNodes[0]
       expect(projectTitle).toHaveTextContent(/projects/i)
@@ -334,6 +333,8 @@ describe('checking projects section', () => {
 
           const projectDiv = screen.getByTestId("projectsDiv").childNodes[i].childNodes[1]
           expect(projectDiv).toContainElement(projectLink)
+          expect(projectLink).toHaveAttribute("target", "_blank")
+          expect(projectLink).toHaveAttribute("rel", "noopener noreferrer")
         })
 
       })
