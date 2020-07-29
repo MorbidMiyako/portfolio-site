@@ -9,3 +9,13 @@ ul,
 ol {
   color: white
 }
+
+@keyframes makeErTwinkle {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
