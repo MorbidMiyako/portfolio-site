@@ -107,5 +107,5 @@ text output haha, with the black background and all
 the front page tests all pass, if it wasnt for the test i would have forgotten
 the target and rel attributes to ensure a new tab would be opened
 
-
+added a small comment to the test file
 
