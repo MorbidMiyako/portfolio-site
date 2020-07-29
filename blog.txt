@@ -95,4 +95,8 @@ presence of the divs inside the main div
 
 quickly added the tests, and commited the structure and updated tests
 
-
+the general tests all pass, Create stars got its general setup worked out in
+order to make it pass.
+the function will create an array with stars, each having random styling
+variables within a certain margin. these stylings will then be applied to the
+generated stars. 
