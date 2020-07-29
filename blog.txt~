@@ -95,4 +95,17 @@ presence of the divs inside the main div
 
 quickly added the tests, and commited the structure and updated tests
 
+the general tests all pass, Create stars got its general setup worked out in
+order to make it pass.
+the function will create an array with stars, each having random styling
+variables within a certain margin. these stylings will then be applied to the
+generated stars. 
+
+applied a very simple styling: text color white. simply to allow to see the
+text output haha, with the black background and all
+
+the front page tests all pass, if it wasnt for the test i would have forgotten
+the target and rel attributes to ensure a new tab would be opened
+
+
 

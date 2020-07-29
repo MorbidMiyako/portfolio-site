@@ -183,6 +183,8 @@ describe('checking front page', () => {
       expect(secondKeyScrollDownButton.toString()).toStrictEqual(ScrollDownFunction.toString())
     })
 
+    // due to the way the rendering works, viewport cant be checked, thus there cant be checked if the site scrolled down or not
+
     /*
     ============================
     due to already checking for the onClick funtion, this means clickable by definition
