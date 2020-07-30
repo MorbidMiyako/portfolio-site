@@ -8,7 +8,7 @@ export default function CreateStars(numOfStars) {
             // size: 20,
             // top: 0,
             // left: 0,
-            duration: 55 * Math.random() + 5,
+            duration: 25 * Math.random() + 5,
             delay: 0
         }
         stars.push(newStar)

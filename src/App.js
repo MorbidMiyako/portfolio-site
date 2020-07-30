@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import StarsFunction from "./helpers/CreateStars.js" //this function wont be directly checked and thus doesnt require an import atm.
+import StarsFunction from "./helpers/CreateStars.js"
 import ScrollDownFunction from "./helpers/ScrollDown.js"
 import linkedinLogoImg from "./linkedinLogoImg.png"
 import githubLogoImg from "./githubLogoImg.png"
@@ -9,6 +9,9 @@ import styled, { keyframes } from "styled-components"
 
 function App() {
   const stars = StarsFunction(100)
+
+  const ref = React.createRef();
+
 
   return (
     <div data-testid="mainDiv" style={{ backgroundColor: "black" }}>
@@ -60,10 +63,10 @@ function App() {
           </a>
         </div>
 
-        <img data-testid="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={ScrollDownFunction} />
+        <img data-testid="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={() => { ScrollDownFunction(ref) }} />
       </div>
 
-      <div data-testid="aboutPage">
+      <div data-testid="aboutPage" ref={ref}>
         <h2>About me</h2>
         <p>
           Title: WOW A WHOLE PAGE ABOUT ME?! <br />
