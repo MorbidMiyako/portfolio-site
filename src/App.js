@@ -1,34 +1,53 @@
 import React from 'react';
 import './App.css';
-import StarsFunction from "./helpers/CreateStars.js" //this function wont be directly checked and thus doesnt require an import atm.
+import StarsFunction from "./helpers/CreateStars.js"
 import ScrollDownFunction from "./helpers/ScrollDown.js"
 import linkedinLogoImg from "./linkedinLogoImg.png"
 import githubLogoImg from "./githubLogoImg.png"
 import scrollDownButtonImg from "./scrollDownButtonImg.png"
+import styled, { keyframes } from "styled-components"
 
 function App() {
-  const stars = StarsFunction(2)
+  const stars = StarsFunction(100)
+
+  const ref = React.createRef();
+
+
   return (
     <div data-testid="mainDiv" style={{ backgroundColor: "black" }}>
-      <div>
-        {stars.map((star, id) => {
-          const starStyling = {
-            fontSize: star.pxSize
-          }
+      {stars.map((star, id) => {
+        const starStyling = {
+          backgroundColor: "rgb(255,255,255,1)",
+          position: "fixed",
+          top: `${star.top}%`,
+          left: `${star.left}%`,
+          width: `${star.size / 4}px`,
+          height: `${star.size / 4}px`,
+          // boxShadow: `0 0 ${star.size / 6(+ 42* 0)}px ${star.size / 10}px white`,
+          boxShadow: `0 0 ${star.size / (2 + 20 * (1 - Math.sqrt(Math.sqrt(star.size / 40))))}px ${star.size / 10}px white`,
+          // widht: 1,
+          // height: 1,
+          borderRadius: "50%",
+          display: "inline-block",
+          animation: `makeErTwinkle ${star.duration}s linear ${star.delay}s infinite alternate`,
+          // boxShadow: `0 0 ${0}px ${star.size / 20}px white, 0 0 ${0}px ${star.size / 20}px rgb(255, 255, 255, 0.8)`,
+          // boxShadow: `0 0 ${star.size / 6}px white`,
+          // boxShadow: `0 0 ${star.size / 20}px white`,
+          // boxShadow: `0 0 ${star.size / 6}px white, 0 0 ${star.size / 20}px rgb(255, 255, 255, 0.8)`,
+          // boxShadow: `0 0 ${star.size / 6}px ${star.size / 20}px white, 0 0 ${star.size / 20}px ${star.size / 20}px rgb(255, 255, 255, 0.8)`,
+          margin: `${star.size / 6}px`
+        }
 
-          return (
-            <div data-testid="star" key={id} style={starStyling}>
-              <p>star</p>
+        return (
+          <span data-testid="star" key={id} style={starStyling}>
+          </span>
 
-            </div>
-
-          )
-        })}
-      </div>
+        )
+      })}
 
       <div data-testid="frontPage">
         {/* these are outside a combined div to allow them to be freely moved around */}
-        <h2>Hello, I'm</h2>
+        <h2 >Hello, I'm</h2>
 
         <h1>Bernd de Kruik</h1>
 
@@ -44,10 +63,10 @@ function App() {
           </a>
         </div>
 
-        <img data-testid="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={ScrollDownFunction} />
+        <img data-testid="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={() => { ScrollDownFunction(ref) }} />
       </div>
 
-      <div data-testid="aboutPage">
+      <div data-testid="aboutPage" ref={ref}>
         <h2>About me</h2>
         <p>
           Title: WOW A WHOLE PAGE ABOUT ME?! <br />

@@ -181,7 +181,11 @@ describe("checking down button present", () => {
     render(<App />)
     const scrollDownButton = screen.getByTestId("scrollDownButton")
     const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
-    expect(secondKeyScrollDownButton.toString()).toStrictEqual(ScrollDownFunction.toString())
+    // this drove me nuts, i was quite happy having found a way to test an onClick function strictly, but due to the need of refs I was unable to use this... but really wanted to haha.....
+    expect(secondKeyScrollDownButton.toString()).toStrictEqual(
+      `() => {
+      (0, _ScrollDown.default)(ref);
+    }`)
 
     // due to the way the rendering works, viewport cant be checked, thus there cant be checked if the site scrolled down or not
 
