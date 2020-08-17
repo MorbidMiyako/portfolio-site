@@ -215,7 +215,7 @@ describe('checking about section', () => {
       render(<App />)
       const secondDiv = screen.getByTestId("aboutPage").childNodes[1]
       expect(secondDiv).toBeInTheDocument()
-      expect(secondDiv).toHaveTextContent(`Bernd de Kruik is a 22 year old computer geek from the Netherlands with a creative out of the box mindset! Bernd thrives at solving problems and puzzles with code, which makes him a full stack webdev that won’t give up until he has the solution for the task that is handled to him! He loves to cook and has a soft spot for cats in his heart! People around him consider him a team player with great communication skills. He is very innovative, dedicated and hardworking. He also hates to talk about himself in the third person and he would really appreciate to not have to do it again.`)
+      expect(secondDiv).toHaveTextContent(`Bernd de Kruik is a 22 year old computer geek from the Netherlands with a creative out of the box mindset! Bernd thrives at solving problems and puzzles with code, which makes him a full stack webdev that won’t give up until he has the solution for the task that is handed to him! He loves to cook and has a soft spot for cats in his heart! People around him consider him a team player with great communication skills. He is very innovative, dedicated and hardworking. He also hates to talk about himself in the third person and he would really appreciate to not have to do it again.`)
     })
 
 
