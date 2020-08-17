@@ -119,7 +119,7 @@ function App() {
 
           <p>
             One of the most exciting projects I have worked on, during my time at Lambda school was the <a href="https://thirsty-lovelace-fb51cb.netlify.app/" target="_blank" rel="noopener noreferrer">Game of Life</a>. For this project, I aimed to achieve a retro visual by using pixelation and the Gameboy’s original green shades and retro fonts.<br />
-            The code language used was the Vanilla JavaScript and you can find the <a data-testid="projectLink" href="https://github.com/MorbidMiyako/game-of-life" target="_blank" rel="noopener noreferrer">repository</a> for this project in my GitHub so, feel free to check it out!
+            The code language used was the Vanilla JavaScript and you can find the <a data-testid="projectLink" href="https://github.com/MorbidMiyako/Conors-Game-of-Life" target="_blank" rel="noopener noreferrer">repository</a> for this project in my GitHub so, feel free to check it out!
           </p>
 
         </div>
