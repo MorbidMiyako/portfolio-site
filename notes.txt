@@ -90,3 +90,4 @@ adaptive design -> ensure that site displays properly on phone
 - line height
 - picture after about
 - font size h2 and h3
+- first scroll button to bottom frontPage -> set display to relative
