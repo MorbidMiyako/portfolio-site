@@ -5,16 +5,17 @@ import ScrollDownFunction from "./helpers/ScrollDown.js"
 import linkedinLogoImg from "./linkedinLogoImg.png"
 import githubLogoImg from "./githubLogoImg.png"
 import scrollDownButtonImg from "./scrollDownButtonImg.png"
-import styled, { keyframes } from "styled-components"
+import profilePicture from "./profilePicture.jpeg"
 
 function App() {
   const stars = StarsFunction(100)
 
-  const ref = React.createRef();
+  const aboutref = React.createRef();
+  const projectsref = React.createRef();
 
 
   return (
-    <div data-testid="mainDiv" style={{ backgroundColor: "black" }}>
+    <div data-testid="mainDiv" className="mainDiv" style={{ backgroundColor: "black" }}>
       {stars.map((star, id) => {
         const starStyling = {
           backgroundColor: "rgb(255,255,255,1)",
@@ -45,15 +46,15 @@ function App() {
         )
       })}
 
-      <div data-testid="frontPage">
+      <div data-testid="frontPage" className="frontPage">
         {/* these are outside a combined div to allow them to be freely moved around */}
-        <h2 >Hello, I'm</h2>
+        <h2 className="helloText">Hello, I'm</h2>
 
-        <h1>Bernd de Kruik</h1>
+        <h1 className="nameText">Bernd de Kruik</h1>
 
-        <h3>A fullstack webdev that simply loves to solve problems with code</h3>
+        <h3 className="shortDescriptionText" >A fullstack webdev that simply loves to solve problems with code</h3>
 
-        <div data-testid="frontSocial">
+        <div data-testid="frontSocial" className="frontSocialDiv">
           <a href="https://www.linkedin.com/in/bernd-de-kruik-2a7497195/" target="_blank" rel="noopener noreferrer">
             <img src={linkedinLogoImg} alt="linkedinLogo" />
           </a>
@@ -63,18 +64,17 @@ function App() {
           </a>
         </div>
 
-        <img data-testid="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={() => { ScrollDownFunction(ref) }} />
+        <img data-testid="scrollDownButton" className="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={() => { ScrollDownFunction(aboutref) }} />
       </div>
 
-      <div data-testid="aboutPage" ref={ref}>
-        <h2>About me</h2>
-        <p>
-          Title: WOW A WHOLE PAGE ABOUT ME?! <br />
-        Bernd de Kruik is a 22 year old computer geek from Netherlands with a creative out of the box mindset! Bernd thrives at solving problems and puzzles with code, which makes him a full stack webdev that won’t give up until he has the solution for the task that is handled to him! <br />
+      <div data-testid="aboutPage" className="aboutPage" ref={aboutref}>
+        <h2 className="aboutText" >WOW A WHOLE PAGE ABOUT ME?! </h2>
+        <p className="longDescriptionText">
+          Bernd de Kruik is a 22 year old computer geek from the Netherlands with a creative out of the box mindset!<br /> Bernd thrives at solving problems and puzzles with code, which makes him a full stack webdev that won’t give up until he has the solution for the task that is handled to him! <br />
         He loves to cook and has a soft spot for cats in his heart! People around him consider him a team player with great communication skills. He is very innovative, dedicated and hardworking. He also hates to talk about himself in the third person and he would really appreciate to not have to do it again.
         </p>
 
-        <div data-testid="aboutSocial">
+        <div data-testid="aboutSocial" className="aboutSocial">
           <a href="https://www.linkedin.com/in/bernd-de-kruik-2a7497195/" target="_blank" rel="noopener noreferrer">
             <img src={linkedinLogoImg} alt="linkedinLogo" />
           </a>
@@ -85,12 +85,18 @@ function App() {
 
         </div>
 
+        <img src={profilePicture} alt="profilePicture" className="profilePicture" />
+
+        <img className="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={() => { ScrollDownFunction(projectsref) }} />
       </div>
 
-      <div data-testid="projectsDiv">
+
+      <div data-testid="projectsDiv" className="projectsDiv" ref={projectsref}>
         <div>
           <h2>
-            Projects
+            <a href="https://github.com/MorbidMiyako?tab=repositories" target="_blank" rel="noopener noreferrer">
+              Projects
+            </a>
           </h2>
         </div>
 
@@ -100,7 +106,8 @@ function App() {
           </h3>
 
           <p>
-            The amazing site ur currently looking at, it can be found <a data-testid="projectLink" href="site" target="_blank" rel="noopener noreferrer"> here</a>. And its hella amazing
+            The <a href="http://bernd-de-kruik.com" target="_blank" rel="noopener noreferrer">portfolio site</a> you are currently looking at was made using a Test Driven Development approach in React, combined with a JavaScript function that creates random stars (It looks very good doesn’t it?!). <br />
+            This website is meant to both showcase me as a developer and show my understanding of writing tests. The whole development process was documented in my <a data-testid="projectLink" href="https://github.com/MorbidMiyako/portfolio-site" target="_blank" rel="noopener noreferrer">GitHub repository</a>. Feel free to check it out!
           </p>
 
         </div>
@@ -111,7 +118,8 @@ function App() {
           </h3>
 
           <p>
-            The amazing site ur currently looking at, it can be found <a data-testid="projectLink" href="site" target="_blank" rel="noopener noreferrer"> here</a>. And its hella amazing
+            One of the most exciting projects I have worked on, during my time at Lambda school was the <a href="https://thirsty-lovelace-fb51cb.netlify.app/" target="_blank" rel="noopener noreferrer">Game of Life</a>. For this project, I aimed to achieve a retro visual by using pixelation and the Gameboy’s original green shades and retro fonts.<br />
+            The code language used was the Vanilla JavaScript and you can find the repository for this project in my <a data-testid="projectLink" href="https://github.com/MorbidMiyako/game-of-life" target="_blank" rel="noopener noreferrer">GitHub</a> so, feel free to check it out!
           </p>
 
         </div>

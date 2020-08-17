@@ -139,3 +139,6 @@ scroll speed, nor with the page scrolling up when one scrolled up possibly a
 bit too far. It removed too much freedom, even if I managed to create a
 desired speed.
 
+Finally I spent a while on styling, making some changes compared to the Figma
+design, creating more segments etc. Made some small tweaks to the tests to
+prepare for the to be made deviations.
