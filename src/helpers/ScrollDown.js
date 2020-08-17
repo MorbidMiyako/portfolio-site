@@ -1,3 +1,6 @@
-export default function ScrollDownFunction() {
-    console.log("im a dummy function")
+export default function ScrollDownFunction(ref) {
+  ref.current.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
 }

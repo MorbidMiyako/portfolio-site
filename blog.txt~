@@ -120,5 +120,25 @@ small typo in the test for the first div, h3 had to be h2 so fixed the typo
 noticed i didnt include a test for the project links to open in a new tab, so
 quickly included them.
 
+got all the tests to pass, moving on to writin the create stars function next
 
+got the create stars to create random stars at random positions, flickering at
+different speeds. Spend quite a long time tweaking the animation, speed and
+size to an acceptable point.
 
+got the scrolling function to work easily, but in order to let the test pass I
+would have to directly reference the function without arguments. The function
+needed ref however, and this caused problems with the test. Resulting in sadly
+having to change the test in the end...
+It still tests if the function is on the button, however sadly it doesnt test
+as literally as before.
+
+spend a good chunck of time trying different options to automatically scroll
+to the top when scrollY had a certain value. However I wasn't content with the
+scroll speed, nor with the page scrolling up when one scrolled up possibly a
+bit too far. It removed too much freedom, even if I managed to create a
+desired speed.
+
+Finally I spent a while on styling, making some changes compared to the Figma
+design, creating more segments etc. Made some small tweaks to the tests to
+prepare for the to be made deviations.

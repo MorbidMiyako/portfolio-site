@@ -1,3 +1,137 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin        : 0;
+  padding       : 0;
+  border        : 0;
+  font          : inherit;
+  font-size     : 100%;
+  font-family   : 'Courier New', Courier, monospace;
+  word-spacing  : -0.15em;
+  letter-spacing: -0.090em;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing : 0;
+}
+
 h1,
 h2,
 h3,
@@ -8,4 +142,157 @@ li,
 ul,
 ol {
   color: white
+}
+
+@keyframes makeErTwinkle {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.mainDiv {
+  max-width: 100%;
+}
+
+.frontPage {
+  height         : 100vh;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  width          : 75.05vw;
+  margin         : 0 auto;
+}
+
+.helloText {
+  font-size : 2vw;
+  text-align: left;
+  left      : 11vw;
+  align-self: flex-start;
+  margin    : 0 0 0 0.4vw;
+
+}
+
+.nameText {
+  font-size     : 12.45vw;
+  font-family   : 'Anton', sans-serif;
+  letter-spacing: 0.2vw;
+  word-spacing  : unset;
+}
+
+.shortDescriptionText {
+  right     : 11vw;
+  font-size : 2vw;
+  text-align: right;
+  align-self: flex-end;
+}
+
+.frontSocialDiv {
+  position: absolute;
+  top     : 1vh;
+  right   : 0.5vw;
+
+}
+
+.frontSocialDiv :nth-child(n) {
+  width : 3vw;
+  height: auto;
+
+}
+
+.frontPage .scrollDownButton {
+  width   : 4.5vw;
+  height  : 3vw;
+  position: absolute;
+  bottom  : 1vh;
+}
+
+.aboutPage {
+  padding       : 0 0 0 5vw;
+  height        : 100vh;
+  position      : relative;
+  display       : flex;
+  flex-direction: column;
+}
+
+.aboutPage h2 {
+  font-family   : 'Anton', sans-serif;
+  letter-spacing: 0.05vw;
+  word-spacing  : unset;
+  font-size     : 4vw;
+  padding       : 7vh 0 3vh;
+}
+
+.aboutPage p {
+  font-size  : 2.5vh;
+  width      : 60vw;
+  line-height: 3vw;
+}
+
+.aboutPage .profilePicture {
+  width     : 25vw;
+  height    : auto;
+  align-self: flex-end;
+  padding   : 0 5vw 0;
+  z-index   : 0;
+  position  : absolute;
+  bottom    : 29vh
+}
+
+.aboutSocial {
+  position: absolute;
+  top     : 65vh;
+  right   : 35vw;
+
+}
+
+.aboutSocial :nth-child(n) {
+  width : 3vw;
+  height: auto;
+
+}
+
+.aboutPage .scrollDownButton {
+  width     : 4.5vw;
+  height    : 3vw;
+  align-self: center;
+  position  : absolute;
+  top       : 93vh
+}
+
+.projectsDiv {
+  padding       : 0 5vw 10vh 28vw;
+  height        : 100vh;
+  display       : flex;
+  flex-direction: column;
+  text-align    : right;
+
+}
+
+.projectsDiv h2 {
+  padding: 7vh 0 0;
+
+}
+
+.projectsDiv h2 a {
+  font-family   : 'Anton', sans-serif;
+  letter-spacing: 0.05vw;
+  word-spacing  : unset;
+  font-size     : 4vw;
+
+}
+
+.projectsDiv h3 {
+  font-size: 3vw;
+  padding  : 4vh 0 2vh;
+}
+
+.projectsDiv p {
+  font-size  : 2.5vh;
+  line-height: 3vw;
+  text-align : right;
 }
