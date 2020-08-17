@@ -142,3 +142,5 @@ desired speed.
 Finally I spent a while on styling, making some changes compared to the Figma
 design, creating more segments etc. Made some small tweaks to the tests to
 prepare for the to be made deviations.
+
+when resolving vulnerabilities/waiting for npm to finish i got a little carried away on making styling changes, there are a few to-do's left, mainly regarding responsive design for smartphones. this has been mention in notes.txt

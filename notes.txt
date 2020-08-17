@@ -85,4 +85,8 @@ this means the new test setup will be:
             have at least an a tag with an href
         has at least a h3 tag
 
-
+styling changes to be made:
+adaptive design -> ensure that site displays properly on phone
+- line height
+- picture after about
+- font size h2 and h3
