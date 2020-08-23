@@ -1,68 +1,109 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio Development
+=====================
 
-## Available Scripts
+### Welcome to the github of my portfolio site
+This ReadME aims to convey the development process of the portfolio site.  
+It uses the blog.txt and notes.txt, which have been edited troughout the development.
 
-In the project directory, you can run:
 
-### `yarn start`
+Initial steps
+-------------
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+While browsing around for potential jobs I noticed TDD was quite a common requirement.
+This gave me the idea to build my portfolio site using a TDD development.  
+I had worked with TDD during my study, this had been a few months at that point however.
+Thus I would need to refresh my jest along the way too.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+Design
+------
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First off, I had to create a design. This is a practical step in general,  
+but especially when working with TDD is this important.
+What elements do I want to show on my site, where will I present them,  
+what are the key aspects?
 
-### `yarn build`
+This initial design was created using Figma, and can be found [here](https://www.figma.com/file/RZlWzB292mvj0SPqNtxBRJ/Portfolio-Design?node-id=0%3A1).
+It shows some basic structures with a minimalistic design.
+The design is mainly centered around telling about myself and my projects,  
+something I'm not a big fan of, but is sadly important when competing with other applicants.
+Just a black and white page would be too bare however, so I decided to add a gentle  
+flair by having random stars being generated that would twinkle at random speeds.
+(I feel that this turned out quite elegant)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Writing tests
+-------------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After the simple design fase, I had a general idea of how my site would look,  
+allowing me to get started on writing the tests needed for the site.
+Well, the tests for the page, the helper functions I didn't end up writing tests for.
+This was mainly due to not being sure how I was going to handle these functions  
+and having the freedom to create freely.
+However I did encorperate their effects on the page in the tests,  
+mainly if stars are randomly generated.
 
-### `yarn eject`
+In notes.txt I mainly wrote out the test structure, this did change over time,  
+as can be seen when reading through the file. This was a very important step to  
+allow for a proper development of the tests.
+Here one can also find a mock html setup to allow me to reference during the writing of tests.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+While writing tests I tried to minimise the amount of test-id's, ensuring a focus  
+on the structure whilst checking for the presence of certain elements.
+I also ran into some parent-child distributions I wasn't sure about, leading me  
+to update and tweak the notes regularly, forcing me to envision the skeleton better.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Mosts of the tests were a breeze to write, however when trying to test for the  
+presence of the scrollDownFunction on the downButton, I ran into an issue.
+This function would be called anonymously on the button, and thus wouldn't show up.
+I experimented for a bit using a mock button, and function to look for a solution regarding this.
+Somewhere along the path of experimenting and researching I decided to console.log the element  
+returned when grabbing the element. This reveiled somewhere in the returned object the function.
+Next up, how to access this value... The key for it changed on every run, thus forced me  
+to grab the array of object keys, and grab the n'th key, before using that key to gain access.
+(This worked, until during development my desire to have it as an helper function ended up  
+forcing me to throw a variable into the function, keeping me from comparing the file directly  
+with te function. Resulting in the text getting hardcoded.)
+This trick is something I ended up using later to access the element tag,  
+and allow for more granular testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+After this main hurdle, it was pretty smooth sailing, and at the end  
+I had 34 or so successfully failing tests.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+Developing the page
+-------------------
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This was a pretty straight forward process, I messed around for a long time with the scrolling  
+function, desiring a different scroll speed but being unable to change this effectively
+Spend a while getting styling to an acceptable point, however this still isn't finished.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Next steps
+----------
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+I will have to pause writing the tests side due to Lambda School soaking up a lot of time,  
+having successfully gone trough Google's FooBar challenge, needing to start applying for jobs,  
+adding features to my Portfolio, etc.
 
-### Analyzing the Bundle Size
+This means, despite enjoying the TDD, I will have to omit the writing tests when implementing  
+new features for a while.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Planned features are:
 
-### Making a Progressive Web App
+- adaptive design -> ensure that site displays properly on phone
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+  - line height
+  - picture after about
+  - font size h2 and h3
+  - first scroll button to bottom frontPage -> set display to relative
 
-### Advanced Configuration
+- replacing the picture with a more professional image
+- adding symbols to show skills
+- cv section
+- contact me section
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+  - a PHP based backend
+  - setting up an auto reply
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- sideways scrolling project cards?
