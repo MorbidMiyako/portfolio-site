@@ -74,8 +74,8 @@ I had 34 or so successfully failing tests.
 Developing the page
 -------------------
 
-This was a pretty straight forward process, I messed around for a long time with the scrolling  
-function, desiring a different scroll speed but being unable to change this effectively
+This was a pretty straight forward process, I messed around for a long time with the scrolling function,  
+desiring a different scroll speed but being unable to change this effectively.  
 Spend a while getting styling to an acceptable point, however this still isn't finished.
 
 
@@ -86,8 +86,7 @@ I will have to pause writing the tests side due to Lambda School soaking up a lo
 having successfully gone trough Google's FooBar challenge, needing to start applying for jobs,  
 adding features to my Portfolio, etc.
 
-This means, despite enjoying the TDD, I will have to omit the writing tests when implementing  
-new features for a while.
+This means, despite enjoying the TDD, I will have to omit the writing tests when implementing new features for a while.
 
 Planned features are:
 
