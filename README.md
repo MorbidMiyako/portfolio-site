@@ -2,26 +2,26 @@ Portfolio Development
 =====================
 
 ### Welcome to the github of my portfolio site
-This ReadME aims to convey the development process of the portfolio site.
+This ReadME aims to convey the development process of the portfolio site.  
 It uses the blog.txt and notes.txt, which have been edited troughout the development.
 
 
 Initial steps
 -------------
 
-While browsing around for potential jobs I noticed TDD was quite a common requirement.
-This gave me the idea to build my portfolio site using a TDD development.
-I had worked with TDD during my study, this had been a few months at that point however.
-Thus I would need to refresh my jest along the way too.
+While browsing around for potential jobs I noticed TDD was quite a common requirement.  
+This gave me the idea to build my portfolio site using a TDD development.  
+I had worked with TDD during my study, this had been a few months at that point however.  
+Thus I would need to refresh my jest along the way too.  
 
 
 Design
 ------
 
 First off, I had to create a design. This is a practical step in general,
-but especially when working with TDD is this important.
+but especially when working with TDD is this important.  
 What elements do I want to show on my site, where will I present them,
-what are the key aspects?
+what are the key aspects?  
 
 This initial design was created using Figma, and can be found [here](https://www.figma.com/file/RZlWzB292mvj0SPqNtxBRJ/Portfolio-Design?node-id=0%3A1).
 It shows some basic structures with a minimalistic design.
