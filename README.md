@@ -67,7 +67,7 @@ with te function. Resulting in the text getting hardcoded.)
 This trick is something I ended up using later to access the element tag,
 and allow for more granular testing
 
-After this main hurdle, it was pretty smooth sailing, and at the end  
+After this main hurdle, it was pretty smooth sailing, and at the end
 I had 34 or so successfully failing tests.
 
 
