@@ -126,7 +126,7 @@ function App() {
 
           <p>
             The <a href="https://bernd-de-kruik.com" target="_blank" rel="noopener noreferrer">portfolio site</a> you are currently looking at was made using a Test Driven Development approach in React, combined with a JavaScript function that creates random stars (It looks very good doesn’t it?!). <br />
-            This website is meant to both showcase me as a developer and show my understanding of writing tests. The whole development process was documented in my GitHub <a data-testid="projectLink" href="https://github.com/MorbidMiyako/portfolio-site" target="_blank" rel="noopener noreferrer">repository</a>. Feel free to check it out!
+            This website is meant to both showcase me as a developer and show my understanding of writing tests. The whole development process was documented in my <a data-testid="projectLink" href="https://github.com/MorbidMiyako/portfolio-site" target="_blank" rel="noopener noreferrer">GitHub repository</a>. Feel free to check it out!
           </p>
 
         </div>

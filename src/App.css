@@ -155,6 +155,10 @@ ol {
   }
 }
 
+a {
+  white-space: nowrap;
+}
+
 .mainDiv {
   max-width: 100vw;
 }
