@@ -227,7 +227,7 @@ describe('checking about section', () => {
       test("aboutSocial div present", () => {
         render(<App />)
         const aboutSocialDiv = screen.getByTestId("aboutSocial")
-        const thirdDiv = screen.getByTestId("aboutPage").childNodes[2]
+        const thirdDiv = screen.getByTestId("aboutPage").childNodes[3].childNodes[1]
         expect(thirdDiv).toStrictEqual(aboutSocialDiv)
       })
     })
