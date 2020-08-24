@@ -101,10 +101,10 @@ styling changes to be made:
 
 tips:
     projects page:
-        - h3 should be same font as h2 with lower linethicnkness
+        % h3 should be same font as h2 with lower linethicnkness
         - remove link on projects
-        - let game of life be on one line
-        - let portfolio github repository be both underlined
+        % let game of life be on one line
+        % let portfolio github repository be both underlined
         
 change made to structure in order to display skills has effected test -> make small adjustment to test to make it pass
 
