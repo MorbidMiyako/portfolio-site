@@ -106,7 +106,7 @@ section {
 }
 
 body {
-  /* line-height: 7.56vh; */
+  /* line-height   : 7.56vh; */
   line-height: 1;
 }
 
@@ -229,11 +229,12 @@ ol {
 }
 
 .aboutPage p {
-  font-size        : 2.5vh;
-  /* font-size     : 1.311vw; */
-  width            : 60vw;
+  /* font-size        : 2.5vh; */
+  font-size  : 1.311vw;
+  width      : 60vw;
   /* make this dependent on viewport -> small it should be 1 */
-  line-height      : 5.7vh;
+  line-height: 5.7vh;
+  height     : 65vh
 }
 
 .aboutPage .profilePicture {
@@ -248,25 +249,39 @@ ol {
   top       : 7vh
 }
 
+.aboutImgBar {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  margin         : 2vh 0 0;
+}
+
 .aboutSocial {
-  position: absolute;
-  bottom  : 10vh;
-  right   : 5vw;
+  display        : flex;
+  justify-content: right;
+  margin         : 0 5vw 0 0;
+  /* position    : absolute;
+  bottom         : 10vh;
+  right          : 5vw; */
 
 }
 
+.aboutSkills :nth-child(n),
 .aboutSocial :nth-child(n) {
   width : 3vw;
   height: auto;
+  margin: 0 0.3vw;
 
 }
 
 .aboutPage .scrollDownButton {
-  width     : 4.5vw;
-  height    : 3vw;
-  align-self: center;
-  position  : absolute;
-  bottom    : 1.2vh
+  width                : 4.5vw;
+  height               : 3vw;
+  margin               : auto auto 1vh;
+  /* justify-self      : right; */
+  /* align-self        : center;
+  position             : absolute;
+  bottom               : 1.2vh */
 }
 
 .projectsDiv {
@@ -284,16 +299,18 @@ ol {
 }
 
 .projectsDiv h2 a {
-  font-family   : 'Anton', sans-serif;
-  letter-spacing: 0.05vw;
-  word-spacing  : unset;
-  font-size     : 4vw;
+  font-family    : 'Anton', sans-serif;
+  letter-spacing : 0.05vw;
+  word-spacing   : unset;
+  font-size      : 4vw;
+  text-decoration: none;
 
 }
 
 .projectsDiv h3 {
-  font-size: 3vw;
-  padding  : 4vh 0 2vh;
+  font-family: 'Anton', sans-serif;
+  font-size  : 3vw;
+  padding    : 4vh 0 2vh;
 }
 
 .projectsDiv p {
@@ -301,4 +318,123 @@ ol {
   /* make this dependent on viewport -> small it should be 1 */
   line-height: 5.7vh;
   text-align : right;
+}
+
+@media screen and (orientation: portrait) {
+
+  .frontPage .scrollDownButton {
+    width : 9vw;
+    height: 6vw
+  }
+
+  .aboutPage {
+    padding       : 0 5vw 0 5vw;
+    min-height    : 100vh;
+    position      : relative;
+    display       : flex;
+    flex-direction: column;
+  }
+
+  .aboutPage h2 {
+    font-family   : 'Anton', sans-serif;
+    letter-spacing: 0.05vw;
+    word-spacing  : unset;
+    font-size     : 4vw;
+    padding       : 3vh 0 3vh;
+  }
+
+  .aboutPage p {
+    /* font-size        : 2.5vh; */
+    font-size  : 3.311vw;
+    /* make this dependent on viewport -> small it should be 1 */
+    width      : auto;
+    line-height: 3.2vw;
+    height     : min-content;
+    margin     : 0 0 3vh
+  }
+
+  .aboutPage .profilePicture {
+    height    : 160vw;
+    padding   : 0;
+    max-height: unset;
+    width     : 50vw;
+    height    : auto;
+    align-self: flex-start;
+    z-index   : 0;
+    position  : static;
+    margin    : auto
+  }
+
+  .aboutImgBar {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    margin         : auto;
+    width          : 50vw;
+    align-self     : flex-start;
+  }
+
+  .aboutSocial {
+    display        : flex;
+    justify-content: right;
+    margin         : 0;
+    /* position    : absolute;
+  bottom           : 10vh;
+  right            : 5vw; */
+
+  }
+
+  .aboutSkills :nth-child(n),
+  .aboutSocial :nth-child(n) {
+    width : 5vw;
+    height: auto;
+    margin: 0.3vh 0.3vh;
+
+  }
+
+  .aboutPage .scrollDownButton {
+    width : 9vw;
+    height: 6vw;
+  }
+
+  .projectsDiv {
+    padding       : 0 5vw 10vh 5vw;
+    min-height    : 100vh;
+    display       : flex;
+    flex-direction: column;
+    text-align    : right;
+
+  }
+
+  .projectsDiv h2 {
+    padding: 3vh 0 0;
+
+  }
+
+  .projectsDiv h2 a {
+    font-family    : 'Anton', sans-serif;
+    letter-spacing : 0.05vw;
+    word-spacing   : unset;
+    font-size      : 4vw;
+    text-decoration: none;
+
+  }
+
+  .projectsDiv h3 {
+    font-size     : 3.5vw;
+    letter-spacing: 0.1vw;
+    font-weight   : 100;
+    padding       : 2vh 0 1vh;
+  }
+
+  .projectsDiv p {
+    /* font-size        : 2.5vh; */
+    font-size  : 3.311vw;
+    /* make this dependent on viewport -> small it should be 1 */
+    width      : auto;
+    line-height: 3.2vw;
+    height     : min-content;
+    margin     : 0 0 3vh
+  }
+
 }

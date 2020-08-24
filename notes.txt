@@ -97,3 +97,14 @@ styling changes to be made:
 - add symbols to show skills on frontPage
 - cv section?
 - contact me section?
+- sideways scrolling project cards?
+
+tips:
+    projects page:
+        - h3 should be same font as h2 with lower linethicnkness
+        - remove link on projects
+        - let game of life be on one line
+        - let portfolio github repository be both underlined
+        
+change made to structure in order to display skills has effected test -> make small adjustment to test to make it pass
+

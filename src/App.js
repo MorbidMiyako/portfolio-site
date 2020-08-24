@@ -2,10 +2,15 @@ import React from 'react';
 import './App.css';
 import StarsFunction from "./helpers/CreateStars.js"
 import ScrollDownFunction from "./helpers/ScrollDown.js"
-import linkedinLogoImg from "./linkedinLogoImg.png"
-import githubLogoImg from "./githubLogoImg.png"
-import scrollDownButtonImg from "./scrollDownButtonImg.png"
-import profilePicture from "./profilePicture.jpeg"
+import linkedinLogoImg from "./img/linkedinLogoImg.png"
+import githubLogoImg from "./img/githubLogoImg.png"
+import scrollDownButtonImg from "./img/scrollDownButtonImg.png"
+import profilePicture from "./img/profilePicture.jpeg"
+import vimLogoImg from "./img/vimLogoImg.png"
+import javasriptLogoImg from "./img/javascriptLogoImg.png"
+import nodejsLogoImg from "./img/nodejsLogoImg.png"
+import pythonLogoImg from "./img/pythonLogoImg.png"
+import reactLogoImg from "./img/reactLogoImg.png"
 
 function App() {
   const stars = StarsFunction(100)
@@ -74,18 +79,32 @@ function App() {
         He loves to cook and has a soft spot for cats in his heart! People around him consider him a team player with great communication skills. He is very innovative, dedicated and hardworking. He also hates to talk about himself in the third person and he would really appreciate to not have to do it again.
         </p>
 
-        <div data-testid="aboutSocial" className="aboutSocial">
-          <a href="https://www.linkedin.com/in/bernd-de-kruik-2a7497195/" target="_blank" rel="noopener noreferrer">
-            <img src={linkedinLogoImg} alt="linkedinLogo" />
-          </a>
+        <img src={profilePicture} alt="profilePicture" className="profilePicture" />
 
-          <a href="https://github.com/MorbidMiyako" target="_blank" rel="noopener noreferrer">
-            <img src={githubLogoImg} alt="githubLogo" />
-          </a>
+        <div className="aboutImgBar">
+          <div className="aboutSkills">
+            <img src={reactLogoImg} alt="reactLogoImg" />
+            <img src={javasriptLogoImg} alt="javasriptLogoImg" />
+            <img src={pythonLogoImg} alt="pythonLogoImg" />
+            <a href="https://www.redbubble.com/people/rainwater11/works/31597665-vim-vi-improved-black-white-logo-text-hoodie" target="_blank" rel="noopener noreferrer">
+              <img src={vimLogoImg} alt="vimLogoImg" />
+            </a>
+            <img src={nodejsLogoImg} alt="nodejsLogoImg" />
+
+          </div>
+          <div data-testid="aboutSocial" className="aboutSocial">
+            <a href="https://www.linkedin.com/in/bernd-de-kruik-2a7497195/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedinLogoImg} alt="linkedinLogo" />
+            </a>
+
+            <a href="https://github.com/MorbidMiyako" target="_blank" rel="noopener noreferrer">
+              <img src={githubLogoImg} alt="githubLogo" />
+            </a>
+
+          </div>
 
         </div>
 
-        <img src={profilePicture} alt="profilePicture" className="profilePicture" />
 
         <img className="scrollDownButton" src={scrollDownButtonImg} alt="scrollDownButton" onClick={() => { ScrollDownFunction(projectsref) }} />
       </div>
@@ -95,7 +114,7 @@ function App() {
         <div>
           <h2>
             <a href="https://github.com/MorbidMiyako?tab=repositories" target="_blank" rel="noopener noreferrer">
-              Projects
+              PROJECTS
             </a>
           </h2>
         </div>
