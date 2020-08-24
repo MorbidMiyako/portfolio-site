@@ -4,9 +4,9 @@ import App from "./App"
 import '@testing-library/jest-dom'
 import StarsFunction from "./helpers/CreateStars.js" //this function wont be directly checked and thus doesnt require an import atm.
 import ScrollDownFunction from "./helpers/ScrollDown.js"
-import linkedinLogoImg from "./linkedinLogoImg.png"
-import githubLogoImg from "./githubLogoImg.png"
-import scrollDownButtonImg from "./scrollDownButtonImg.png"
+import linkedinLogoImg from "./img/linkedinLogoImg.png"
+import githubLogoImg from "./img/githubLogoImg.png"
+import scrollDownButtonImg from "./img/scrollDownButtonImg.png"
 
 
 
@@ -227,7 +227,7 @@ describe('checking about section', () => {
       test("aboutSocial div present", () => {
         render(<App />)
         const aboutSocialDiv = screen.getByTestId("aboutSocial")
-        const thirdDiv = screen.getByTestId("aboutPage").childNodes[2]
+        const thirdDiv = screen.getByTestId("aboutPage").childNodes[3].childNodes[1]
         expect(thirdDiv).toStrictEqual(aboutSocialDiv)
       })
     })
