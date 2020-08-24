@@ -90,19 +90,19 @@ This means, despite enjoying the TDD, I will have to omit the writing tests when
 
 Planned features are:
 
-- adaptive design -> ensure that site displays properly on phone
+<!-- - adaptive design -> ensure that site displays properly on phone
 
   - line height
   - picture after about
   - font size h2 and h3
-  - first scroll button to bottom frontPage -> set display to relative
+  - first scroll button to bottom frontPage -> set display to relative -->
 
 - replacing the picture with a more professional image
-- adding symbols to show skills
+<!-- - adding symbols to show skills -->
 - cv section
 - contact me section
 
   - a PHP based backend
   - setting up an auto reply
 
-- sideways scrolling project cards?
+- sideways scrolling project cards
