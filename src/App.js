@@ -1,5 +1,5 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import StarsFunction from "./helpers/CreateStars.js"
 import ScrollDownFunction from "./helpers/ScrollDown.js"
 import linkedinLogoImg from "./img/linkedinLogoImg.png"
@@ -15,8 +15,8 @@ import reactLogoImg from "./img/reactLogoImg.png"
 function App() {
   const stars = StarsFunction(100)
 
-  const aboutref = React.createRef();
-  const projectsref = React.createRef();
+  const aboutref = React.createRef()
+  const projectsref = React.createRef()
 
 
   return (
@@ -142,9 +142,20 @@ function App() {
           </p>
 
         </div>
+
+        <div>
+          <h3>
+            Other Projects
+          </h3>
+
+          <p>
+            Visit my <a href="https://github.com/MorbidMiyako" target="_blank" rel="noopener noreferrer">github</a> to see more projects I have worked on, a few interesting projects are a React Native app I worked on for Connect our Kids and my solutions to google's FooBar recruitment challenges.
+          </p>
+
+        </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
