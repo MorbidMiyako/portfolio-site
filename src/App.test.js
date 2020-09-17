@@ -7,6 +7,7 @@ import ScrollDownFunction from "./helpers/ScrollDown.js"
 import linkedinLogoImg from "./img/linkedinLogoImg.png"
 import githubLogoImg from "./img/githubLogoImg.png"
 import scrollDownButtonImg from "./img/scrollDownButtonImg.png"
+import mailLogoImg from "./img/mailLogoImg.png"
 
 
 
@@ -98,23 +99,51 @@ describe('checking front page', () => {
   })
 
   describe("checking frontSocialDiv for correct amount of div's", () => {
-    test("2 divs present", () => {
+    test("3 divs present", () => {
       render(<App />)
-      expect(screen.getByTestId("frontSocial").childElementCount).toBe(2)
+      expect(screen.getByTestId("frontSocial").childElementCount).toBe(3)
     })
+
+  })
+
+  describe("checking mail logo", () => {
+    test("logo present", () => {
+      render(<App />)
+      const mailLogo = screen.getByTestId("frontSocial").childNodes[0].firstChild
+      expect(mailLogo).toHaveAttribute("src", mailLogoImg)
+    })
+
+    test("link wrapped around logo", () => {
+      render(<App />)
+      const mailLogoATag = screen.getByTestId("frontSocial").childNodes[0]
+      expect(mailLogoATag).toHaveAttribute("href", "mailto:bernd-de-kruik@hotmail.com")
+      // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
+      const mailLogoWrappingElement = mailLogoATag[Object.keys(mailLogoATag)[0]].type
+      expect(mailLogoWrappingElement).toStrictEqual("a")
+    })
+
+    /*
+    ============================
+    due to the plan of wrapping img in an a tag with href, this means clickable by definition
+    ============================
+
+    test("logo clickable", () => {
+      render(<App />)
+      const frontSocialDiv = screen.getByTestId("frontSocial")
+    */
 
   })
 
   describe("checking linkedin logo", () => {
     test("logo present", () => {
       render(<App />)
-      const linkedinLogo = screen.getByTestId("frontSocial").childNodes[0].firstChild
+      const linkedinLogo = screen.getByTestId("frontSocial").childNodes[1].firstChild
       expect(linkedinLogo).toHaveAttribute("src", linkedinLogoImg)
     })
 
     test("link wrapped around logo", () => {
       render(<App />)
-      const linkedinLogoATag = screen.getByTestId("frontSocial").childNodes[0]
+      const linkedinLogoATag = screen.getByTestId("frontSocial").childNodes[1]
       expect(linkedinLogoATag).toHaveAttribute("href", "https://www.linkedin.com/in/bernd-de-kruik-2a7497195/")
       expect(linkedinLogoATag).toHaveAttribute("target", "_blank")
       expect(linkedinLogoATag).toHaveAttribute("rel", "noopener noreferrer")
@@ -135,68 +164,68 @@ describe('checking front page', () => {
 
   })
 
-})
+  describe("checking github logo", () => {
+    test("logo present", () => {
+      render(<App />)
+      const githubLogo = screen.getByTestId("frontSocial").childNodes[2].firstChild
+      expect(githubLogo).toHaveAttribute("src", githubLogoImg)
+    })
 
-describe("checking github logo", () => {
-  test("logo present", () => {
-    render(<App />)
-    const githubLogo = screen.getByTestId("frontSocial").childNodes[1].firstChild
-    expect(githubLogo).toHaveAttribute("src", githubLogoImg)
-  })
-
-  test("link wrapped around logo", () => {
-    render(<App />)
-    const githubLogoATag = screen.getByTestId("frontSocial").childNodes[1]
-    expect(githubLogoATag).toHaveAttribute("href", "https://github.com/MorbidMiyako")
-    expect(githubLogoATag).toHaveAttribute("target", "_blank")
-    expect(githubLogoATag).toHaveAttribute("rel", "noopener noreferrer")
-    // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
-    const githubLogoWrappingElement = githubLogoATag[Object.keys(githubLogoATag)[0]].type
-    expect(githubLogoWrappingElement).toStrictEqual("a")
-  })
-
-  /*
-  ============================
-  due to the plan of wrapping img in an a tag with href, this means clickable by definition
-  ============================
-
-  test("logo clickable", () => {
-    render(<App />)
-    const frontSocialDiv = screen.getByTestId("frontSocial")
-
-  })
-  
-  */
-
-})
-
-describe("checking down button present", () => {
-  test("button present", () => {
-    render(<App />)
-    const scrollDownButton = screen.getByTestId("scrollDownButton")
-    expect(scrollDownButton).toHaveAttribute("src", scrollDownButtonImg)
-  })
-
-  test("function attached to button", () => {
-    render(<App />)
-    const scrollDownButton = screen.getByTestId("scrollDownButton")
-    const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
-    // this drove me nuts, i was quite happy having found a way to test an onClick function strictly, but due to the need of refs I was unable to use this... but really wanted to haha.....
-    expect(secondKeyScrollDownButton.toString()).toStrictEqual(
-      `() => {
-      (0, _ScrollDown.default)(aboutref);
-    }`)
-
-    // due to the way the rendering works, viewport cant be checked, thus there cant be checked if the site scrolled down or not
+    test("link wrapped around logo", () => {
+      render(<App />)
+      const githubLogoATag = screen.getByTestId("frontSocial").childNodes[2]
+      expect(githubLogoATag).toHaveAttribute("href", "https://github.com/MorbidMiyako")
+      expect(githubLogoATag).toHaveAttribute("target", "_blank")
+      expect(githubLogoATag).toHaveAttribute("rel", "noopener noreferrer")
+      // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
+      const githubLogoWrappingElement = githubLogoATag[Object.keys(githubLogoATag)[0]].type
+      expect(githubLogoWrappingElement).toStrictEqual("a")
+    })
 
     /*
     ============================
-    due to already checking for the onClick funtion, this means clickable by definition
+    due to the plan of wrapping img in an a tag with href, this means clickable by definition
     ============================
-    test("button clickable", () => {
-      expect(1 + 1).not.toBe(3)
+  
+    test("logo clickable", () => {
+      render(<App />)
+      const frontSocialDiv = screen.getByTestId("frontSocial")
+  
     })
+    
     */
+
+  })
+
+  describe("checking down button present", () => {
+    test("button present", () => {
+      render(<App />)
+      const scrollDownButton = screen.getByTestId("scrollDownButton")
+      expect(scrollDownButton).toHaveAttribute("src", scrollDownButtonImg)
+    })
+
+    test("function attached to button", () => {
+      render(<App />)
+      const scrollDownButton = screen.getByTestId("scrollDownButton")
+      const secondKeyScrollDownButton = scrollDownButton[Object.keys(scrollDownButton)[1]].onClick
+      // this drove me nuts, i was quite happy having found a way to test an onClick function strictly, but due to the need of refs I was unable to use this... but really wanted to haha.....
+      expect(secondKeyScrollDownButton.toString()).toStrictEqual(
+        `() => {
+      (0, _ScrollDown.default)(aboutref);
+    }`)
+
+      // due to the way the rendering works, viewport cant be checked, thus there cant be checked if the site scrolled down or not
+
+      /*
+      ============================
+      due to already checking for the onClick funtion, this means clickable by definition
+      ============================
+      test("button clickable", () => {
+        expect(1 + 1).not.toBe(3)
+      })
+      */
+
+    })
 
   })
 
@@ -231,16 +260,35 @@ describe('checking about section', () => {
         expect(thirdDiv).toStrictEqual(aboutSocialDiv)
       })
     })
+
+    describe("checking mail logo", () => {
+      test("logo present", () => {
+        render(<App />)
+        const mailLogo = screen.getByTestId("aboutSocial").childNodes[0].firstChild
+        expect(mailLogo).toHaveAttribute("src", mailLogoImg)
+      })
+
+      test("link wrapped around logo", () => {
+        render(<App />)
+        const mailLogoATag = screen.getByTestId("aboutSocial").childNodes[0]
+        expect(mailLogoATag).toHaveAttribute("href", "mailto:bernd-de-kruik@hotmail.com")
+        // decided to test if the image was wrapped in an a tag using similar code as the test checking if the projects title div contained the correct element
+        const mailLogoWrappingElement = mailLogoATag[Object.keys(mailLogoATag)[0]].type
+        expect(mailLogoWrappingElement).toStrictEqual("a")
+      })
+
+    })
+
     describe("checking linkedin logo", () => {
       test("logo present", () => {
         render(<App />)
-        const linkedinLogo = screen.getByTestId("aboutSocial").childNodes[0].firstChild
+        const linkedinLogo = screen.getByTestId("aboutSocial").childNodes[1].firstChild
         expect(linkedinLogo).toHaveAttribute("src", linkedinLogoImg)
       })
 
       test("link wrapped around logo", () => {
         render(<App />)
-        const linkedinLogoATag = screen.getByTestId("aboutSocial").childNodes[0]
+        const linkedinLogoATag = screen.getByTestId("aboutSocial").childNodes[1]
         expect(linkedinLogoATag).toHaveAttribute("href", "https://www.linkedin.com/in/bernd-de-kruik-2a7497195/")
         expect(linkedinLogoATag).toHaveAttribute("target", "_blank")
         expect(linkedinLogoATag).toHaveAttribute("rel", "noopener noreferrer")
@@ -254,13 +302,13 @@ describe('checking about section', () => {
     describe("checking github logo", () => {
       test("logo present", () => {
         render(<App />)
-        const githubLogo = screen.getByTestId("aboutSocial").childNodes[1].firstChild
+        const githubLogo = screen.getByTestId("aboutSocial").childNodes[2].firstChild
         expect(githubLogo).toHaveAttribute("src", githubLogoImg)
       })
 
       test("link wrapped around logo", () => {
         render(<App />)
-        const githubLogoATag = screen.getByTestId("aboutSocial").childNodes[1]
+        const githubLogoATag = screen.getByTestId("aboutSocial").childNodes[2]
         expect(githubLogoATag).toHaveAttribute("href", "https://github.com/MorbidMiyako")
         expect(githubLogoATag).toHaveAttribute("target", "_blank")
         expect(githubLogoATag).toHaveAttribute("rel", "noopener noreferrer")

@@ -221,6 +221,7 @@ a {
 .frontSocialDiv :nth-child(n) {
   width : 3vw;
   height: auto;
+  margin: 0 0.1vw 0;
 
 }
 
