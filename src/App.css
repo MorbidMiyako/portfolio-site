@@ -165,7 +165,7 @@ ol {
   }
 
   100% {
-    transform: translate(0, 1vw);
+    transform: translate(0, 1vh);
     opacity  : 0;
   }
 }
@@ -221,6 +221,7 @@ a {
 .frontSocialDiv :nth-child(n) {
   width : 3vw;
   height: auto;
+  margin: 0 0.1vw 0;
 
 }
 
@@ -229,7 +230,7 @@ a {
   width    : 4.5vw;
   height   : 3vw;
   position : absolute;
-  bottom   : 1vh;
+  bottom   : 0;
 
 }
 
@@ -296,14 +297,15 @@ a {
 }
 
 .aboutPage .scrollDownButton {
-  width                : 4.5vw;
-  height               : 3vw;
-  margin               : auto auto 1vh;
-  animation            : scrollDownAnimation 4s ease-in-out infinite;
-  /* justify-self      : right; */
-  /* align-self        : center;
-  position             : absolute;
-  bottom               : 1.2vh */
+  width       : 4.5vw;
+  height      : 3vw;
+  margin      : auto auto 1vh;
+  animation   : scrollDownAnimation 4s ease-in-out infinite;
+  justify-self: right;
+  margin      : 0 5vw 0 0;
+  align-self  : center;
+  position    : absolute;
+  bottom      : 0;
 }
 
 .projectsDiv {
