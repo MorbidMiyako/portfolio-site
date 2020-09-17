@@ -11,6 +11,7 @@ import javasriptLogoImg from "./img/javascriptLogoImg.png"
 import nodejsLogoImg from "./img/nodejsLogoImg.png"
 import pythonLogoImg from "./img/pythonLogoImg.png"
 import reactLogoImg from "./img/reactLogoImg.png"
+import mailLogoImg from "./img/mailLogoImg.png"
 
 function App() {
   const stars = StarsFunction(100)
@@ -60,6 +61,10 @@ function App() {
         <h3 className="shortDescriptionText" >A fullstack webdev that simply loves to solve problems with code</h3>
 
         <div data-testid="frontSocial" className="frontSocialDiv">
+          <a href="mailto:bernd-de-kruik@hotmail.com" className="mailLogo">
+            <img src={mailLogoImg} alt="mailLogo" />
+          </a>
+
           <a href="https://www.linkedin.com/in/bernd-de-kruik-2a7497195/" target="_blank" rel="noopener noreferrer">
             <img src={linkedinLogoImg} alt="linkedinLogo" />
           </a>
@@ -93,6 +98,10 @@ function App() {
 
           </div>
           <div data-testid="aboutSocial" className="aboutSocial">
+            <a href="mailto:bernd-de-kruik@hotmail.com" className="mailLogo">
+              <img src={mailLogoImg} alt="mailLogo" />
+            </a>
+
             <a href="https://www.linkedin.com/in/bernd-de-kruik-2a7497195/" target="_blank" rel="noopener noreferrer">
               <img src={linkedinLogoImg} alt="linkedinLogo" />
             </a>
@@ -149,7 +158,7 @@ function App() {
           </h3>
 
           <p>
-            Visit my <a href="https://github.com/MorbidMiyako" target="_blank" rel="noopener noreferrer">github</a> to see more projects I have worked on, a few interesting projects are a React Native app I worked on for Connect our Kids and my solutions to google's FooBar recruitment challenges.
+            Visit my <a data-testid="projectLink" href="https://github.com/MorbidMiyako" target="_blank" rel="noopener noreferrer">github</a> to see more projects I have worked on, a few interesting projects are a React Native app I worked on for Connect our Kids and my solutions to google's FooBar recruitment challenges.
           </p>
 
         </div>
